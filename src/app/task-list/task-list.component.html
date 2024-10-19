@@ -1,0 +1,23 @@
+<div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>DateTime</th>
+          <th>Priority</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{task.id}}</td>
+          <td>{{task.title}}</td>
+          <td>{{task.description}}</td>
+          <td>{{task.dateTime}}</td>
+          <td>{{task.priority}}</td>
+        </tr>
+      </tbody>
+    </table>
+   
+  </div>
