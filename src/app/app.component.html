@@ -1,3 +1,49 @@
-<p><a [routerLink]="['/']">test</a>tets</p>
-<!-- <router-outlet></router-outlet> -->
 
+ <nav class="navbar navbar-light bg-dark justify-content-between">
+  <div class="container-fluid">
+  <a class="navbar-brand text-white">UNICOM TIC</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</div>
+</nav>
+
+
+<div class="d-flex">
+<main>
+  <h1 class="visually-hidden">Sidebars examples</h1>
+
+  <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 280px; height: 900px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4">Task Manager</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="#" class="nav-link active" aria-current="page">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link  text-white"  [routerLink]="['/task-list']" >
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+          Task
+        </a>
+      </li>
+      <li>
+        <a href="#" class="nav-link text-white" [routerLink]="['/user-list']">
+          <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          User
+        </a>
+      </li>
+    </ul>
+    <hr>
+  </div>
+</main>
+<div class="mt-5" style="width:100%">
+<router-outlet></router-outlet>
+</div>
+</div>

@@ -1,30 +1,27 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { TaskService } from './task.service';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import {RouterModule, RouterOutlet, Routes } from '@angular/router';
 import { TaskListComponent } from './task-list/task-list.component';
-import { TaskAddComponent } from "./task-add/task-add.component";
-
-
+import { FiltertaskPipe } from './pipes-task/filtertask.pipe';
+import { TaskService } from './task.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule, TaskListComponent, TaskAddComponent , RouterLink],
+  imports: [TaskListComponent, RouterModule,FiltertaskPipe,RouterOutlet],
+  providers:[TaskService],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'TaskManagement';
 
-  tasks:any[]=[];
-  constructor(private taskService:TaskService){
+  constructor(){
 
   }
 
   ngOnInit():void{
-    this.taskService.getTask().subscribe(data=>{this.tasks=data});  
+ 
   }
   
 }
